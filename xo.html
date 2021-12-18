@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>
+            XO game
+        </title>
+        <link href="./bootstrap-5.1.2-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="xo.js" rel="stylesheet"> -->
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                <!-- table tag in bootstrap -->
+                <table class="table  table-borderless" style="width: 30rem; height: 15rem;">      
+                <!--table body  -->
+                <tbody>
+                <!--table row  -->
+                    <tr>
+                        <th scope="row">
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game" type="button" class="btn-lg" onclick="gameid('game')"></button>
+                        </div>                       
+                        </td>
+
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game1" type="button" class="btn-lg" onclick="gameid('game1')"></button>
+                        </div>
+                        </td>
+
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game2" type="button" class="btn-lg" onclick="gameid('game2')"></button>
+                        </div>
+                        </td>
+                        </th>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row">
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game3" type="button" class="btn-lg" onclick="gameid('game3')"></button>
+                        </div>
+                        </td>
+
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game4" type="button" class="btn-lg" onclick="gameid('game4')"></button>
+                        </div>
+                        </td>
+
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game5" type="button" class="btn-lg" onclick="gameid('game5')"></button>
+                        </div>
+                        </td>
+                        </th>
+                    </tr>
+
+
+                    <tr>
+                        <th scope="row">
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game6" type="button" class="btn-lg " onclick="gameid('game6')"></button>
+                        </div>
+                        </td>
+
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game7" type="button" class="btn-lg" onclick="gameid('game7')"></button>
+                        </div>
+                        </td>
+
+                        <td class="table-success text-center">
+                        <div>
+                            <button id="game8" type="button" class="btn-lg" onclick="gameid('game8')"></button>
+                        </div>
+                        </td>
+                        </th>
+                    </tr>
+                </tbody>
+                 </div>
+        </div>
+                </table>
+                <h1 id="p"></h1>
+                <p id="bye"></p>
+      <script>
+          var a,b,c;
+          b=0;
+             function gameid(a)
+             {
+                b++;
+                if (b%2==1) 
+                {
+                    document.getElementById(a).innerHTML="X";
+                    document.getElementById(a).disabled="true";
+                }
+                 else
+                {
+                    document.getElementById(a).innerHTML="O";
+                    document.getElementById(a).disabled="true";                    
+                }
+                // winning formations
+                 if(("X"==document.getElementById('game').innerHTML)&&("X"==document.getElementById('game1').innerHTML)&&("X"==document.getElementById('game2').innerHTML)||
+                 ("X"==document.getElementById('game3').innerHTML)&&("X"==document.getElementById('game4').innerHTML)&&("X"==document.getElementById('game5').innerHTML)||
+                 ("X"==document.getElementById('game6').innerHTML)&&("X"==document.getElementById('game7').innerHTML)&&("X"==document.getElementById('game8').innerHTML)||
+                 ("X"==document.getElementById('game').innerHTML)&&("X"==document.getElementById('game3').innerHTML)&&("X"==document.getElementById('game6').innerHTML)||
+                 ("X"==document.getElementById('game1').innerHTML)&&("X"==document.getElementById('game4').innerHTML)&&("X"==document.getElementById('game7').innerHTML)||
+                 ("X"==document.getElementById('game2').innerHTML)&&("X"==document.getElementById('game5').innerHTML)&&("X"==document.getElementById('game8').innerHTML)||
+                 ("X"==document.getElementById('game').innerHTML)&&("X"==document.getElementById('game4').innerHTML)&&("X"==document.getElementById('game8').innerHTML)||
+                 ("X"==document.getElementById('game2').innerHTML)&&("X"==document.getElementById('game4').innerHTML)&&("X"==document.getElementById('game6').innerHTML))
+                 {
+                    // alert("X is win");
+                    document.getElementById('p').innerHTML="X is a winner!";
+                 }
+                 
+                // O portion
+                 if(("O"==document.getElementById('game').innerHTML)&&("O"==document.getElementById('game1').innerHTML)&&("O"==document.getElementById('game2').innerHTML)||
+                 ("O"==document.getElementById('game3').innerHTML)&&("O"==document.getElementById('game4').innerHTML)&&("O"==document.getElementById('game5').innerHTML)||
+                 ("O"==document.getElementById('game6').innerHTML)&&("O"==document.getElementById('game7').innerHTML)&&("O"==document.getElementById('game8').innerHTML)||
+                 ("O"==document.getElementById('game').innerHTML)&&("O"==document.getElementById('game3').innerHTML)&&("O"==document.getElementById('game6').innerHTML)||
+                 ("O"==document.getElementById('game1').innerHTML)&&("O"==document.getElementById('game4').innerHTML)&&("O"==document.getElementById('game7').innerHTML)||
+                 ("O"==document.getElementById('game2').innerHTML)&&("O"==document.getElementById('game5').innerHTML)&&("O"==document.getElementById('game8').innerHTML)||
+                 ("O"==document.getElementById('game2').innerHTML)&&("O"==document.getElementById('game4').innerHTML)&&("O"==document.getElementById('game6').innerHTML)||
+                 ("O"==document.getElementById('game').innerHTML)&&("O"==document.getElementById('game4').innerHTML)&&("O"==document.getElementById('game8').innerHTML))
+                 {
+                     document.getElementById('p').innerHTML="O is a winner!";
+                 }
+                  
+               }
+             
+               
+        </script>
+        <script src="/bootstrap-5.1.2-dist/js/bootstrap.min.js"></script>
+    </body>
+</html>
